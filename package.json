@@ -4,16 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prepare": "husky install",
-    "test": "jest",
-    "pre-commit": "lint-staged && eslint",
-    "pre-push": "npm test"
-  },
-  "lint-staged": {
-    "./src/*.{js,jsx,ts,tsx}": [
-      "run eslint --fix",
-      "git add"
-    ]
+    "test": "jest"
   },
   "keywords": [],
   "author": "Edson Cabral Junior",
@@ -25,9 +16,7 @@
     "eslint": "^8.6.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4",
-    "husky": "^7.0.4",
     "jest": "^27.4.7",
-    "lint-staged": "^12.1.7",
     "typescript": "^4.5.4"
   },
   "dependencies": {
