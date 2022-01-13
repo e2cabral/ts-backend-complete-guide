@@ -1,5 +1,6 @@
 import { APIGatewayEventRequestContextWithAuthorizer, APIGatewayProxyEvent } from 'aws-lambda';
 import { helloWorld } from '../../../../src/presentation/controllers/hello-world/hello-world';
+import { ok } from '../../../../src/helpers/http';
 
 const mockRequest = () => ({
   body: null,
@@ -19,6 +20,6 @@ const mockRequest = () => ({
 describe('Hello World', () => {
   test('Should return 200 on success', async () => {
     const httpResponse = await helloWorld(mockRequest());
-    expect(httpResponse).toEqual({ statusCode: 200, body: JSON.stringify({ message: 'Hello World' }) });
+    expect(httpResponse).toEqual(ok(JSON.stringify({ message: 'Hello World!' })));
   });
 });
