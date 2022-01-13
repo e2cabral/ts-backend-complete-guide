@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Sample SAM Template for lambda
+
+Resources:
+  HelloWorld:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: .
+      Handler: handler path
+      Runtime: nodejs14.x
+      Timeout: 30
+      Events:
+        CreateBooks:
+          Type: Api
+          Properties:
+            Path: endpoint path
+            Method: get
