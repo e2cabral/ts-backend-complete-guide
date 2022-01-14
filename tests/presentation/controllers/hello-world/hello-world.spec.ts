@@ -1,5 +1,5 @@
 import { APIGatewayEventRequestContextWithAuthorizer, APIGatewayProxyEvent } from 'aws-lambda';
-import { helloWorld } from '../../../../src/presentation/controllers/hello-world/hello-world';
+import { helloWorld } from '../../../../src/presentation/controllers/hello-world/helloWorld';
 import { ok } from '../../../../src/helpers/http';
 
 const mockRequest = () => ({
