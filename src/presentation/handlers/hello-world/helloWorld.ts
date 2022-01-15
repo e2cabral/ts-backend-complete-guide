@@ -1,6 +1,7 @@
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
 import { ok } from '../../../helpers/http';
 import { DIContainerConfig, Messager, HelloWorld } from '../../../main/config/d-i-container.config';
+import { Connection } from '../../../infra/database';
 
 export const helloWorld = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
   console.log(event);
@@ -10,5 +11,14 @@ export const helloWorld = async (event: APIGatewayProxyEvent): Promise<APIGatewa
 
   const message = DIContainerConfig.container.resolve(Messager);
 
-  return ok(JSON.stringify({ message: message.sendHelloWorldMessage() }));
+  const connection = await Connection();
+
+  return ok(
+    JSON.stringify(
+      {
+        message: message.sendHelloWorldMessage(),
+        connection: connection.name,
+      },
+    ),
+  );
 };

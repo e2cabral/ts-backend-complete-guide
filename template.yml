@@ -7,7 +7,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: .
-      Handler: build/presentation/controllers/hello-world/helloWorld.helloWorld
+      Handler: build/presentation/handlers/hello-world/helloWorld.helloWorld
       Runtime: nodejs14.x
       Timeout: 30
       Events:

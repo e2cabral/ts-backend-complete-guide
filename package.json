@@ -27,6 +27,7 @@
     "aws-sdk": "^2.1056.0",
     "dotenv": "^11.0.0",
     "inversify": "^6.0.1",
+    "pg": "^8.7.1",
     "reflect-metadata": "^0.1.13",
     "ts-node": "^10.4.0",
     "typeorm": "^0.2.41"
