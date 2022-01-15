@@ -1,5 +1,5 @@
 import { APIGatewayEventRequestContextWithAuthorizer, APIGatewayProxyEvent } from 'aws-lambda';
-import { helloWorld } from '../../../../src/presentation/controllers/hello-world/helloWorld';
+import { helloWorld } from '../../../../src/presentation/handlers/hello-world/helloWorld';
 import { ok } from '../../../../src/helpers/http';
 
 const mockRequest = () => ({
@@ -20,6 +20,6 @@ const mockRequest = () => ({
 describe('Hello World', () => {
   test('Should return 200 on success', async () => {
     const httpResponse = await helloWorld(mockRequest());
-    expect(httpResponse).toEqual(ok(JSON.stringify({ message: 'Hello World!' })));
+    expect(httpResponse).toEqual(ok(JSON.stringify({ message: 'Hello World!', connection: 'default' })));
   });
 });
