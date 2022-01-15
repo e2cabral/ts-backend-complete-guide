@@ -7,6 +7,6 @@ export const Connection = () => createConnection({
   port: 5432,
   username: 'postgres',
   password: 'postgres',
-  database: 'postgres',
+  database: 'guide',
   entities: [],
 } as PostgresConnectionOptions);
