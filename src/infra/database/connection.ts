@@ -1,5 +1,6 @@
 import { createConnection } from 'typeorm';
 import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConnectionOptions';
+import { Author } from '../../domain/models/author.model';
 
 export const Connection = () => createConnection({
   type: 'postgres',
@@ -8,5 +9,5 @@ export const Connection = () => createConnection({
   username: 'postgres',
   password: 'postgres',
   database: 'guide',
-  entities: [],
+  entities: [Author],
 } as PostgresConnectionOptions);
