@@ -13,5 +13,5 @@ export class Author {
     bornDate!: Date;
 
   @Column({ type: 'date', name: 'death_date' })
-    deathDate!: Date;
+    deathDate?: Date;
 }
