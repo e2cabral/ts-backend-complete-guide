@@ -19,4 +19,17 @@ describe('Author Repository', () => {
 
     expect(typeof authors).toEqual(typeof typeToCompare);
   });
+
+  test('Should return an author on success.', async () => {
+    const id = 1;
+    const typeToCompare: Author = {
+      id: 1,
+      bornDate: new Date('2000-12-12'),
+      deathDate: undefined,
+      name: 'Me',
+    };
+
+    const author = await repository.getById(id);
+    expect(typeof author).toEqual(typeof typeToCompare);
+  });
 });
