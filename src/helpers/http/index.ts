@@ -24,7 +24,7 @@ export const serverError = (error: Error): HttpResponse => ({
 
 export const ok = (data: any): HttpResponse => ({
   statusCode: 200,
-  body: data,
+  body: JSON.stringify(data),
 });
 
 export const noContent = (): HttpResponse => ({
