@@ -11,8 +11,35 @@ Resources:
       Runtime: nodejs14.x
       Timeout: 30
       Events:
-        CreateBooks:
+        HelloWorld:
           Type: Api
           Properties:
             Path: /hello-world
+            Method: get
+  GetAll:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: .
+      Handler: build/presentation/handlers/author/getAll.handle
+      Runtime: nodejs14.x
+      Timeout: 30
+      Events:
+        GetAll:
+          Type: Api
+          Properties:
+            Path: /authors
+            Method: get
+
+  GetById:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: .
+      Handler: build/presentation/handlers/author/getById.handle
+      Runtime: nodejs14.x
+      Timeout: 30
+      Events:
+        GetById:
+          Type: Api
+          Properties:
+            Path: /authors/{id}
             Method: get
